@@ -1,8 +1,12 @@
 name: "Terraform GitHub Actions"
 on:
   - pull_request
-  jobs:
-    terraform:
+
+jobs:
+  terraform:
+    name: 'Terraform'
+    runs-on: ubuntu-latest
+    steps:
       - name: 'Checkout'
         uses: actions/checkout@master
 
@@ -11,6 +15,7 @@ on:
         with:
           tf_actions_version: 0.12.13
           tf_actions_subcommand: 'fmt'
+
       - name: 'Terraform validate'
         uses: hashicorp/terraform-github-actions@master
         with:
