@@ -1,4 +1,6 @@
 # terraform-account
+![Terraform GitHub Actions](https://github.com/fdns/terraform-account/workflows/Terraform%20GitHub%20Actions/badge.svg)
+
 This repository contains the terraform code to setup my personas AWS respository, limiting the account permissions to prevent errors when deploying or using other services by accident.
 
 ## Group Permissions
