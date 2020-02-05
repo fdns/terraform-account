@@ -72,7 +72,7 @@ data "aws_iam_policy_document" "terraform_user_general" {
     condition {
       test     = "StringNotEqualsIfExists"
       variable = "aws:Resource"
-      values = ["role/aws-ec2-spot-fleet-tagging-role"]
+      values   = ["role/aws-ec2-spot-fleet-tagging-role"]
     }
   }
 }
