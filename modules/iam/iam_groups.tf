@@ -29,3 +29,8 @@ resource "aws_iam_group_policy_attachment" "developer-attach-cloud9" {
   group      = "${aws_iam_group.terraform_developers.name}"
   policy_arn = "${aws_iam_policy.terraform_user_cloud9.arn}"
 }
+
+resource "aws_iam_group_policy_attachment" "developer-attach-ses" {
+  group      = "${aws_iam_group.terraform_developers.name}"
+  policy_arn = "${aws_iam_policy.terraform_user_ses.arn}"
+}

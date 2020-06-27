@@ -18,11 +18,11 @@ data "aws_iam_policy_document" "terraform_user_developer_ec2" {
       values   = ["us-east-2"]
     }
 
-    condition {
+/*    condition {
       test     = "StringEqualsIfExists"
       variable = "ec2:AvailabilityZone"
       values   = ["us-east-2a"]
-    }
+    }*/
   }
 
   statement {
@@ -66,6 +66,22 @@ data "aws_iam_policy_document" "terraform_user_developer_ec2" {
     actions = [
       "s3:GetBucketLocation",
       "s3:ListAllMyBuckets"
+    ]
+    resources = [
+      "*"
+    ]
+  }
+
+  // Allow write to SSM
+  statement {
+    actions = [
+      "ssm:PutParameter",
+      "ssm:DeleteParameter",
+      "ssm:GetParameterHistory",
+      "ssm:GetParametersByPath",
+      "ssm:GetParameters",
+      "ssm:GetParameter",
+      "ssm:DeleteParameters"
     ]
     resources = [
       "*"
